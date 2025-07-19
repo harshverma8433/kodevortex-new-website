@@ -35,12 +35,12 @@ const CTASection = () => {
               </Button>
             </div>
             
-            {/* For Companies */}
+            {/* For Colleges */}
             <div className="glass-card p-8 text-center glow-hover rounded-xl">
               <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Rocket className="w-8 h-8 text-secondary-foreground" />
               </div>
-              <h3 className="text-xl font-bold mb-3">For Companies</h3>
+              <h3 className="text-xl font-bold mb-3">For Colleges</h3>
               <p className="text-muted-foreground text-sm mb-6">
                 Upskill your team with custom training programs and corporate solutions.
               </p>

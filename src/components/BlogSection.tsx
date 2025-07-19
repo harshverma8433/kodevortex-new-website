@@ -3,8 +3,11 @@ import { Button } from '@/components/ui/button';
 import blog1 from '@/assets/blog-1.jpg';
 import blog2 from '@/assets/blog-2.jpg';
 import blog3 from '@/assets/blog-3.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const BlogCard = ({ blog, index }: { blog: any; index: number }) => {
+
+ 
   return (
     <article
       className="group relative bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all"
@@ -69,6 +72,7 @@ const BlogCard = ({ blog, index }: { blog: any; index: number }) => {
 };
 
 const BlogSection = () => {
+   const navigate = useNavigate();
   const blogs = [
     {
       title: 'The Future of AI in Software Development: Trends to Watch',
@@ -125,7 +129,7 @@ const BlogSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="btn-primary group">
+          <Button onClick={() => navigate("/blogs")}  className="btn-primary group">
             <span>View More Articles</span>
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>

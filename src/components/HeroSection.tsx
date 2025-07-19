@@ -2,12 +2,13 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import heroVortex from '@/assets/hero-vortex.jpg';
 import learningScene from '@/assets/learning-scene.jpg';
-
+import { useNavigate } from 'react-router-dom';
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-16 bg-gradient-hero">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-8 bg-gradient-hero">
       {/* Background Elements */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute  inset-0 opacity-10">
         <img 
           src={heroVortex} 
           alt="Digital Vortex" 
@@ -58,7 +59,7 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="gradient" size="xl" className="group">
+            <Button onClick={() => navigate("/courses")}  variant="gradient" size="xl" className="group">
               Explore Courses
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>

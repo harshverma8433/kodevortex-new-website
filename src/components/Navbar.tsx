@@ -2,22 +2,25 @@ import { useState, useEffect } from 'react';
 import { Search, User, Sun, Moon, Menu, X, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import './Navbar.css';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
 
   const menuItems = [
-    'Home',
-    'Courses',
-    'Training Arena',
-    'Openings',
-    'About',
-    'Testimonials',
-    'Blog',
-    'Contact',
+    { path: '/', label: 'Home' },
+    { path: '/courses', label: 'Courses' },
+    { path: '/training-arena', label: 'Training Arena' },
+    { path: '/openings', label: 'Openings' },
+    { path: '/about', label: 'About' },
+    { path: '/testimonials', label: 'Testimonials' },
+    { path: '/blog', label: 'Blog' },
+    { path: '/contact', label: 'Contact' },
   ];
 
   useEffect(() => {
@@ -26,29 +29,6 @@ const Navbar = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const sectionIds = menuItems.map((item) => item.toLowerCase().replace(' ', '-'));
-
-    const handleScrollSpy = () => {
-      let currentSection = '';
-      for (let id of sectionIds) {
-        const section = document.getElementById(id);
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            currentSection = id;
-            break;
-          }
-        }
-      }
-      setActiveSection(currentSection);
-    };
-
-    handleScrollSpy();
-    window.addEventListener('scroll', handleScrollSpy);
-    return () => window.removeEventListener('scroll', handleScrollSpy);
   }, []);
 
   const toggleDarkMode = () => {
@@ -130,22 +110,19 @@ const Navbar = () => {
 
       {/* Bottom Navbar (Desktop) */}
       <div className="border-b">
-        <div className="mx-auto px-4">
-          <div className="hidden md:flex items-center justify-center space-x-8 py-3">
-            {menuItems.map((item) => {
-              const id = item.toLowerCase().replace(' ', '-');
-              return (
-                <a
-                  key={id}
-                  href={`#${id}`}
-                  className={`nav-link text-sm font-medium py-2 px-3 rounded-md transition-colors ${
-                    activeSection === id ? 'bg-primary text-white' : ''
-                  }`}
-                >
-                  {item}
-                </a>
-              );
-            })}
+        <div className="mx-auto ">
+          <div className="hidden md:flex items-center w-full justify-center space-x-8 py-3   ">
+            {menuItems.map(({ path, label }) => (
+              <div
+                key={label}
+                onClick={() => navigate(path)}
+                className={`nav-link text-sm font-medium py-2 px-3 rounded-md transition-colors cursor-pointer ${
+                  location.pathname === path ? 'bg-primary text-white' : ''
+                }`}
+              >
+                {label}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -164,21 +141,20 @@ const Navbar = () => {
                 />
               </div>
 
-              {menuItems.map((item) => {
-                const id = item.toLowerCase().replace(' ', '-');
-                return (
-                  <a
-                    key={id}
-                    href={`#${id}`}
-                    className={`nav-link text-sm font-medium py-2 px-3 rounded-md transition-colors ${
-                      activeSection === id ? 'bg-primary text-white' : ''
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item}
-                  </a>
-                );
-              })}
+              {menuItems.map(({ path, label }) => (
+                <div
+                  key={label}
+                  onClick={() => {
+                    navigate(path);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`nav-link text-sm font-medium py-2 px-3 rounded-md transition-colors cursor-pointer ${
+                    location.pathname === path ? 'bg-primary text-white' : ''
+                  }`}
+                >
+                  {label}
+                </div>
+              ))}
 
               <Button variant="outline" size="sm" className="w-full mt-4">
                 KodeBumps

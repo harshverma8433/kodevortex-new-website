@@ -5,8 +5,9 @@ import { Clock, Users, Star, ArrowRight } from 'lucide-react';
 import aiImage from '@/assets/ai-course.jpg';
 import pythonImage from '@/assets/python-course.jpg';
 import reactImage from '@/assets/react-course.jpg';
-
+import { useNavigate } from 'react-router-dom';
 const CourseCategories = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('technical');
   const [selectedSection, setSelectedSection] = useState('trendingcourse');
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -263,7 +264,7 @@ const CourseCategories = () => {
     activeTab === 'technical' ? filteredCourses : managementCourses;
 
   return (
-    <section id="categories" className="py-20 bg-[#0f172a] text-white">
+    <section  className="py-20 bg-[#0f172a] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
@@ -290,6 +291,7 @@ const CourseCategories = () => {
               ))}
             </div>
           </div>
+          
         </div>
 
         {activeTab === 'technical' && (
@@ -304,6 +306,7 @@ const CourseCategories = () => {
                 {section.label}
               </Button>
             ))}
+                      
           </div>
         )}
 
@@ -370,8 +373,17 @@ const CourseCategories = () => {
                 </Button>
               </div>
             </div>
+            
           ))}
         </div>
+        <div className="mt-20 text-center">
+  <button
+    className="px-8 py-3 bg-blue-400 hover:bg-blue-500  rounded-xl font-semibold transition-all duration-300"
+    onClick={() => navigate('/courses')}
+  >
+    View All Course
+  </button>
+</div>
       </div>
 
       {selectedCourse && (
@@ -418,6 +430,9 @@ const CourseCategories = () => {
               <Badge variant="secondary">{selectedCourse.price}</Badge>
             </div>
           </div>
+
+
+
         </div>
       )}
     </section>
