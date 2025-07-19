@@ -9,6 +9,7 @@ import reactImage from '@/assets/react-course.jpg';
 const CourseCategories = () => {
   const [activeTab, setActiveTab] = useState('technical');
   const [selectedSection, setSelectedSection] = useState('trendingcourse');
+  const [selectedCourse, setSelectedCourse] = useState(null);
 
   const managementCourses = [
     {
@@ -21,7 +22,17 @@ const CourseCategories = () => {
       rating: 4.7,
       price: '$599',
       level: 'Professional',
-      description: 'Complete Workday HCM configuration and administration'
+      description: 'Complete Workday HCM configuration and administration',
+      syllabus: [
+        'Introduction to Workday HCM',
+        'Core HCM Configuration',
+        'Business Processes Setup',
+        'Security Groups & Roles',
+        'Workday Studio Basics',
+        'Advanced Reporting & Dashboards',
+        'Integrations Overview',
+        'Final Capstone Project'
+      ]
     },
     {
       id: 10,
@@ -33,7 +44,15 @@ const CourseCategories = () => {
       rating: 4.8,
       price: '$299',
       level: 'Beginner',
-      description: 'Agile methodologies and modern project management tools'
+      description: 'Agile methodologies and modern project management tools',
+      syllabus: [
+        'Agile & Scrum Introduction',
+        'Sprint Planning & Execution',
+        'Project Lifecycle & Documentation',
+        'Team Collaboration Tools',
+        'Risk Management',
+        'Project Closure Techniques'
+      ]
     }
   ];
 
@@ -60,7 +79,21 @@ const CourseCategories = () => {
       price: '$299',
       level: 'Advanced',
       category: 'datascience',
-      description: 'Deep dive into GPT, DALL-E, and custom AI model development'
+      description: 'Deep dive into GPT, DALL-E, and custom AI model development',
+      syllabus: [
+        'Week 1: Introduction to AI & ML',
+        'Week 2: Deep Learning with TensorFlow',
+        'Week 3: Introduction to Generative Models',
+        'Week 4: GPT and Transformer Architecture',
+        'Week 5: Building Chatbots',
+        'Week 6: Image Generation using GANs & DALL·E',
+        'Week 7: Prompt Engineering',
+        'Week 8: Model Deployment with Flask',
+        'Week 9: Real-time Use Cases',
+        'Week 10: Custom Fine-tuning',
+        'Week 11: Ethics & Bias in AI',
+        'Week 12: Capstone Project',
+      ]
     },
     {
       id: 2,
@@ -73,7 +106,18 @@ const CourseCategories = () => {
       price: '$399',
       level: 'Intermediate',
       category: 'softwaredevlopment',
-      description: 'Build scalable web applications with Python, Django, and React'
+      description: 'Build scalable web applications with Python, Django, and React',
+      syllabus: [
+        'HTML, CSS & JavaScript Basics',
+        'Python Fundamentals',
+        'Django Models & Views',
+        'User Authentication',
+        'REST APIs with Django',
+        'React Basics & Hooks',
+        'Connecting Django with React',
+        'Deployment to Cloud',
+        'Final Full Stack Project'
+      ]
     },
     {
       id: 3,
@@ -86,7 +130,18 @@ const CourseCategories = () => {
       price: '$349',
       level: 'Intermediate',
       category: 'softwaredevlopment',
-      description: 'Modern frontend development with React ecosystem'
+      description: 'Modern frontend development with React ecosystem',
+      syllabus: [
+        'React Core Concepts',
+        'Hooks Deep Dive',
+        'Routing with React Router',
+        'State Management with Redux',
+        'Next.js Pages & SSR',
+        'API Routes & Middleware',
+        'Authentication with JWT',
+        'SEO in Next.js',
+        'Testing & Deployment'
+      ]
     },
     {
       id: 4,
@@ -99,7 +154,17 @@ const CourseCategories = () => {
       price: '$299',
       level: 'Beginner',
       category: 'cloudcomputing',
-      description: 'Learn cloud basics with real-time AWS deployment and services'
+      description: 'Learn cloud basics with real-time AWS deployment and services',
+      syllabus: [
+        'Cloud Basics & Deployment Models',
+        'AWS Free Tier Setup',
+        'EC2, S3, IAM',
+        'RDS & DynamoDB',
+        'VPC & Networking',
+        'Serverless with Lambda',
+        'Monitoring & Billing',
+        'Hands-on Project'
+      ]
     },
     {
       id: 5,
@@ -112,7 +177,15 @@ const CourseCategories = () => {
       price: '$199',
       level: 'Beginner',
       category: 'fashion&interior',
-      description: 'Foundational course in interior planning, colors, and furnishings'
+      description: 'Foundational course in interior planning, colors, and furnishings',
+      syllabus: [
+        'Color Theory & Psychology',
+        'Furniture Selection & Layout',
+        'Lighting Techniques',
+        'Textiles & Accessories',
+        'Room-by-Room Planning',
+        'Practical Design Project'
+      ]
     },
     {
       id: 6,
@@ -125,7 +198,16 @@ const CourseCategories = () => {
       price: '$399',
       level: 'Advanced',
       category: 'sap',
-      description: 'Understand SAP financials, integration and configuration'
+      description: 'Understand SAP financials, integration and configuration',
+      syllabus: [
+        'SAP Overview & Navigation',
+        'FI Module Configuration',
+        'CO Module Overview',
+        'Accounts Payable & Receivable',
+        'Asset Management',
+        'Integration Scenarios',
+        'Hands-on Exercises'
+      ]
     },
     {
       id: 7,
@@ -138,7 +220,16 @@ const CourseCategories = () => {
       price: '$259',
       level: 'Intermediate',
       category: 'hr',
-      description: 'Complete guide to hiring, training, and managing people'
+      description: 'Complete guide to hiring, training, and managing people',
+      syllabus: [
+        'Recruitment Strategies',
+        'Employee Onboarding',
+        'Performance Appraisal',
+        'Training & Development',
+        'Labor Laws & Policies',
+        'HRMS Tools Overview',
+        'Case Studies'
+      ]
     },
     {
       id: 8,
@@ -151,18 +242,28 @@ const CourseCategories = () => {
       price: '$149',
       level: 'Beginner',
       category: 'language',
-      description: 'Improve fluency and confidence in English communication'
+      description: 'Improve fluency and confidence in English communication',
+      syllabus: [
+        'Grammar & Vocabulary',
+        'Pronunciation Practice',
+        'Speaking Fluency Drills',
+        'Listening Comprehension',
+        'Public Speaking Practice',
+        'Mock Interviews'
+      ]
     }
   ];
 
-  const filteredCourses = selectedSection === 'trendingcourse'
-    ? allCourses.slice(0, 3)
-    : allCourses.filter(course => course.category === selectedSection);
+  const filteredCourses =
+    selectedSection === 'trendingcourse'
+      ? allCourses.slice(0, 3)
+      : allCourses.filter((course) => course.category === selectedSection);
 
-  const displayedCourses = activeTab === 'technical' ? filteredCourses : managementCourses;
+  const displayedCourses =
+    activeTab === 'technical' ? filteredCourses : managementCourses;
 
   return (
-    <section id="categories" className="py-20 bg-muted/30">
+    <section id="categories" className="py-20 bg-[#0f172a] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
@@ -259,7 +360,11 @@ const CourseCategories = () => {
                   </div>
                 </div>
 
-                <Button variant="gradient" className="w-full group/btn">
+                <Button
+                  variant="gradient"
+                  className="w-full group/btn"
+                  onClick={() => setSelectedCourse(course)}
+                >
                   View Course
                   <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
@@ -268,6 +373,53 @@ const CourseCategories = () => {
           ))}
         </div>
       </div>
+
+      {selectedCourse && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center">
+          <div className="bg-[#1e293b] text-white p-6 rounded-2xl max-w-xl w-full shadow-xl relative">
+            <button
+              className="absolute top-4 right-4 text-muted-foreground hover:text-primary text-xl"
+              onClick={() => setSelectedCourse(null)}
+            >
+              ✕
+            </button>
+
+            <img
+              src={selectedCourse.image}
+              alt={selectedCourse.title}
+              className="w-full h-48 object-cover rounded-lg mb-4"
+            />
+
+            <h2 className="text-2xl font-bold mb-2">{selectedCourse.title}</h2>
+            <p className="text-sm text-muted-foreground mb-2">
+              <strong>Instructor:</strong> {selectedCourse.instructor}
+            </p>
+            <p className="text-muted-foreground mb-4">{selectedCourse.description}</p>
+
+            {selectedCourse?.syllabus && (
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold mb-2">Syllabus</h4>
+                <ul className="text-sm max-h-48 overflow-y-auto space-y-1 list-disc list-inside pr-2">
+                  {selectedCourse.syllabus.map((item, idx) => (
+                    <li key={idx} className="text-muted-foreground">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="flex justify-between items-center text-sm text-muted-foreground mb-2">
+              <span><Clock className="inline-block h-4 w-4 mr-1" />{selectedCourse.duration}</span>
+              <span><Users className="inline-block h-4 w-4 mr-1" />{selectedCourse.students}</span>
+              <span><Star className="inline-block h-4 w-4 text-yellow-500 mr-1" />{selectedCourse.rating}</span>
+            </div>
+
+            <div className="flex justify-between items-center">
+              <Badge>{selectedCourse.level}</Badge>
+              <Badge variant="secondary">{selectedCourse.price}</Badge>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
