@@ -3,12 +3,13 @@ import { Canvas } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 import { Rocket, Shield, ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
-
+import { useNavigate } from 'react-router-dom';
 const CTASection = () => {
+  const naviagte = useNavigate();
   return (
 <div className="flex justify-center gap-8 mt-12 mx-52 ">
             {/* For Students */}
-            <div className="glass-card p-8 text-center glow-hover rounded-xl">
+            <div onClick={() => naviagte("/courses")} className="glass-card p-8 text-center glow-hover rounded-xl">
               <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-primary-foreground" />
               </div>
@@ -22,7 +23,7 @@ const CTASection = () => {
             </div>
             
             {/* For Corporates */}
-            <div className="glass-card p-8 text-center glow-hover rounded-xl">
+            <div onClick={() => naviagte("/kodeBumps")} className="glass-card p-8 text-center glow-hover rounded-xl">
               <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Rocket className="w-8 h-8 text-secondary-foreground" />
               </div>
@@ -36,7 +37,7 @@ const CTASection = () => {
             </div>
             
             {/* For Colleges */}
-            <div className="glass-card p-8 text-center glow-hover rounded-xl">
+            <div onClick={() => naviagte("training-arena")} className="glass-card p-8 text-center glow-hover rounded-xl">
               <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Rocket className="w-8 h-8 text-secondary-foreground" />
               </div>

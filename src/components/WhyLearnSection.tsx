@@ -91,11 +91,11 @@ const WhyLearnSection = () => {
         <div className="mt-20 glass-card rounded-3xl p-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
-              <div className="text-4xl font-bold gradient-text">50,000+</div>
+              <div className="text-4xl font-bold gradient-text">10,000+</div>
               <div className="text-muted-foreground">Active Learners</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl font-bold gradient-text">200+</div>
+              <div className="text-4xl font-bold gradient-text">10+</div>
               <div className="text-muted-foreground">Expert Courses</div>
             </div>
             <div className="space-y-2">

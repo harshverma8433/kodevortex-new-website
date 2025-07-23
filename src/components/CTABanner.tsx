@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 const CTABanner = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-20 bg-background relative overflow-hidden">
       {/* Background Effects */}
@@ -52,7 +53,7 @@ const CTABanner = () => {
               Join Free Today
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="gradient-outline" size="xl" className="px-12">
+            <Button onClick={() => navigate("/courses")} variant="gradient-outline" size="xl" className="px-12">
               Browse Courses
             </Button>
           </div>

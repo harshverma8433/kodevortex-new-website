@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Layout from "./pages/Layout";
 import NotFound from "./pages/NotFound";
 import CoursesPage from "./components/CoursesPage/CoursesPage";
+import KodeBumps from "./components/KodeBumps/KodeBumps";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
             <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/KodeBumps" element={<KodeBumps />} />
             {/* Add other pages here */}
           </Route>
           {/* Catch-all */}

@@ -74,7 +74,7 @@ const Navbar = () => {
 
             {/* Right Icons */}
             <div className="flex items-center space-x-4">
-              <button className="cta flex justify-center">
+              <div onClick={() => navigate("/KodeBumps")} className="cta flex justify-center">
                 <span className="span">KodeBumps</span>
                 <span className="second">
                   <svg width="12px" height="12px" viewBox="0 0 66 43" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@ const Navbar = () => {
                     </g>
                   </svg>
                 </span>
-              </button>
+              </div>
 
               <Button variant="ghost" size="sm" onClick={toggleDarkMode} className="p-2">
                 {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}

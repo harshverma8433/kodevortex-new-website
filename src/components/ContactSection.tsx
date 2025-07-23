@@ -15,21 +15,35 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+  const endpoint =
+    "https://script.google.com/macros/s/AKfycbxvkAGAKHKpuADauJT-ksRHea5aFj3Guv9cNErfMyzebFuo2SUV74QBu4OqI1ajDyWA6g/exec";
 
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
-  };
+    const result = await response.json();
+
+    if (result.result === "success") {
+      alert("Data submitted successfully!");
+      setFormData({ name : "", email: "", message: "" });
+    } else {
+      alert("Submission failed.");
+    }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert("Something went wrong.");
+  }
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({

@@ -21,10 +21,10 @@ const Index = () => {
       <CTASection />
       <PartnersSection />
       <PopularCourses />
-      <section className="scroll-animate">
+      {/* <section className="scroll-animate">
         <EducatorsSection />
-      </section>
-      <BlogSection />
+      </section> */}
+      {/* <BlogSection /> */}
       <TestimonialsSection />
       <CTABanner />
       <ContactSection />
