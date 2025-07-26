@@ -5,6 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { log } from 'console';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -15,32 +16,37 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-const handleSubmit = async (e) => {
+const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
-
-  const endpoint =
-    "https://script.google.com/macros/s/AKfycbxvkAGAKHKpuADauJT-ksRHea5aFj3Guv9cNErfMyzebFuo2SUV74QBu4OqI1ajDyWA6g/exec";
+  setIsSubmitting(true);
 
   try {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+   fetch("https://script.google.com/macros/s/AKfycbxdJ9Ttif_0qM7PrPrZIYriwpoXdSj7Njb0WWJoXoAb-nRmUUKchGI5HoYYCUdc9eWm/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name: "Harsh",
+    email: "harsh@example.com",
+    message: "Chal ja bc"
+  }),
+})
+  .then(res => res.json())
+  .then(data => console.log("Success:", data))
+  .catch(err => console.error("Submit error:", err));
 
-    const result = await response.json();
+  console.log("hello wo");
+  
 
-    if (result.result === "success") {
-      alert("Data submitted successfully!");
-      setFormData({ name : "", email: "", message: "" });
-    } else {
-      alert("Submission failed.");
-    }
+
+    toast({ title: "Message sent!" });
+    setFormData({ name: "", email: "", message: "" });
   } catch (error) {
-    console.error("Error submitting form:", error);
-    alert("Something went wrong.");
+    console.error("Submit error:", error);
+    toast({ title: "Failed to send message", variant: "destructive" });
+  } finally {
+    setIsSubmitting(false);
   }
 };
 

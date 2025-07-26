@@ -10,6 +10,7 @@ import Layout from "./pages/Layout";
 import NotFound from "./pages/NotFound";
 import CoursesPage from "./components/CoursesPage/CoursesPage";
 import KodeBumps from "./components/KodeBumps/KodeBumps";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToTop/>
         {/* Navbar is persistent */}
         <Navbar />
         <Routes>
@@ -33,6 +35,7 @@ const App = () => (
         </Routes>
         {/* Footer is persistent */}
         <Footer />
+        
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

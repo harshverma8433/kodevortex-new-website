@@ -1,62 +1,85 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
+import abhiraj from "../../public/abhiraj.jpg";
+import anshuman from "../../public/anshuman.jpeg";
+import riddhi from "../../public/riddhi.jpg";
+import yug from "../../public/yug.jpg";
+import soham from "../../public/soham.jpeg";
 
 const TestimonialsSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Sarah Johnson',
-      role: 'AI Engineer at Google',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b15a130b?w=400&h=400&fit=crop&crop=face',
-      content: 'KodeVortex transformed my career completely. The AI course was incredibly comprehensive and the mentors were always available. Within 6 months, I landed my dream job at Google!',
-      rating: 5,
-      course: 'AI & Machine Learning Bootcamp',
-      outcome: 'Got hired at Google as AI Engineer'
-    },
-    {
-      id: 2,
-      name: 'Michael Chen',
-      role: 'Full Stack Developer at Meta',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-      content: 'The Python Full Stack course exceeded my expectations. Real-world projects, excellent curriculum, and amazing community support. The career guidance helped me negotiate a 40% salary increase!',
-      rating: 5,
-      course: 'Python Full Stack Development',
-      outcome: '40% salary increase at Meta'
-    },
-    {
-      id: 3,
-      name: 'Emily Rodriguez',
-      role: 'Senior React Developer at Netflix',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
-      content: 'From complete beginner to senior developer in just 8 months! The React course structure is brilliant, and the hands-on projects gave me the confidence to tackle complex applications.',
-      rating: 5,
-      course: 'React.js & Next.js Mastery',
-      outcome: 'Promoted to Senior Developer'
-    },
-    {
-      id: 4,
-      name: 'David Thompson',
-      role: 'Workday Consultant at Deloitte',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face',
-      content: 'The Workday HCM course is incredibly detailed and practical. The instructor\'s real-world experience made all the difference. I\'m now a certified consultant earning 60% more than before.',
-      rating: 5,
-      course: 'Workday HCM Administration',
-      outcome: '60% income increase as consultant'
-    },
-    {
-      id: 5,
-      name: 'Lisa Wang',
-      role: 'Data Scientist at Microsoft',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face',
-      content: 'The data science track is phenomenal! From statistics to advanced ML algorithms, everything was covered perfectly. The capstone project helped me stand out in interviews.',
-      rating: 5,
-      course: 'Data Science with Python & AI',
-      outcome: 'Landed Data Scientist role at Microsoft'
+const testimonials = [
+  {
+    id: 1,
+    name: 'Riddhi',
+    role: 'FrontEnd Developer',
+    image: riddhi,
+    content: 'The frontend bootcamp sharpened my skills with real-world UI/UX projects. I now build beautiful, responsive websites confidently.',
+    rating: 5,
+    course: 'Frontend Web Development Bootcamp',
+    outcome: 'Built portfolio and got hired at Flipkart'
+  },
+  {
+    id: 2,
+    name: 'Soham Dhokale',
+    role: 'Backend Developer',
+    image: soham,
+    content: 'KodeVortex backend course helped me master Node.js, databases, and scalable architecture. The hands-on projects were game-changing.',
+    rating: 5,
+    course: 'Backend Development with Node.js & Express',
+    outcome: 'Promoted to Backend Lead at Amazon'
+  },
+  {
+    id: 3,
+    name: 'Anshuman Sugandhi',
+    role: 'Backend Developer',
+    image: anshuman,
+    content: 'With a strong focus on APIs, databases, and deployment, I gained confidence as a backend engineer and built production-ready apps.',
+    rating: 5,
+    course: 'Advanced Backend Engineering Program',
+    outcome: 'Promoted to Senior Developer at TCS'
+  },
+  {
+    id: 4,
+    name: 'Abhiraj',
+    role: 'React Developer',
+    image: abhiraj,
+    content: 'The React and Next.js course was hands-on and practical. I can now build lightning-fast SPAs and SSR-ready apps with confidence.',
+    rating: 5,
+    course: 'React & Next.js Masterclass',
+    outcome: 'Freelancing full-time and earning 2x'
+  },
+  {
+    id: 5,
+    name: 'Yug',
+    role: 'Frontend Developer',
+    image: yug,
+    content: 'From CSS animations to React components, the frontend track gave me all the tools to stand out in interviews and ace design systems.',
+    rating: 5,
+    course: 'Modern Frontend Developer Program',
+    outcome: 'Landed frontend dev role at Microsoft'
+  }
+];
+
+
+  const getDefaultContentByRole = (role) => {
+    switch (role.toLowerCase()) {
+      case 'frontend developer':
+        return 'This frontend course really sharpened my skills. I can now build beautiful and responsive apps with confidence.';
+      case 'backend developer':
+        return 'The backend curriculum was thorough and industry-relevant. It helped me become proficient in modern backend technologies.';
+      case 'react developer':
+        return 'The React course was extremely hands-on and practical. I can now build scalable web apps using best practices.';
+      case 'data scientist':
+        return 'The data science training was comprehensive, covering both theory and practice. It really prepared me for the field.';
+      case 'ai engineer':
+        return 'The AI modules were cutting-edge and very well explained. A great investment for anyone interested in AI.';
+      default:
+        return 'KodeVortex helped me level up in my career with expert mentorship and real-world projects.';
     }
-  ];
+  };
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % testimonials.length);
@@ -72,7 +95,7 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section  className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
@@ -118,7 +141,11 @@ const TestimonialsSection = () => {
               {/* Content */}
               <div className="md:col-span-2 space-y-6">
                 <blockquote className="text-lg md:text-xl leading-relaxed text-foreground">
-                  "{testimonials[currentSlide].content}"
+                  "{
+                    testimonials[currentSlide].content
+                      ? testimonials[currentSlide].content
+                      : getDefaultContentByRole(testimonials[currentSlide].role)
+                  }"
                 </blockquote>
                 
                 <div className="space-y-3">
@@ -126,9 +153,9 @@ const TestimonialsSection = () => {
                     <div className="bg-primary/10 px-3 py-1 rounded-full text-sm font-medium text-primary">
                       Course: {testimonials[currentSlide].course}
                     </div>
-                    <div className="bg-green-500/10 px-3 py-1 rounded-full text-sm font-medium text-green-600">
+                    {/* <div className="bg-green-500/10 px-3 py-1 rounded-full text-sm font-medium text-green-600">
                       ✨ {testimonials[currentSlide].outcome}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
