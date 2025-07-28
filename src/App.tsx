@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import CoursesPage from "./components/CoursesPage/CoursesPage";
 import KodeBumps from "./components/KodeBumps/KodeBumps";
 import ScrollToTop from "./components/ScrollToTop";
+import AboutUsPage from "./components/Aboutuspage/Aboutuspage";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
             <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/about" element={<AboutUsPage />} />
             <Route path="/KodeBumps" element={<KodeBumps />} />
             {/* Add other pages here */}
           </Route>

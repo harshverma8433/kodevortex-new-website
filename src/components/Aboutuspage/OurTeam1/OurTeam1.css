@@ -1,0 +1,55 @@
+/* .bgcol3{
+    background-color: #5D7284CC;
+}
+
+.slick-slide > div {
+    margin: 0 1rem; 
+  }
+   */
+
+
+   /* TeamSection.css */
+
+.bg-grid-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Add these animation classes for a smooth entry of elements */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Hover effects for team member cards */
+  .team-card {
+    transition: all 0.3s ease;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(91, 33, 182, 0.2);
+  }
+  
+  /* Gradient text effect */
+  .gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #a78bfa, #818cf8);
+  }
+  
+  /* Social icons hover effect */
+  .social-icon {
+    transition: all 0.2s ease;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+  }

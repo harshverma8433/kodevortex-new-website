@@ -1,45 +1,6 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Clock, Users, Star, ArrowRight } from 'lucide-react';
-import aiImage from '@/assets/ai-course.jpg';
+  import aiImage from '@/assets/ai-course.jpg';
 import pythonImage from '@/assets/python-course.jpg';
 import reactImage from '@/assets/react-course.jpg';
-import { useNavigate } from 'react-router-dom';
-import genai from "../../public/courses_image/genai.png"
-import sapfico from "../../public/courses_image/sapfico.jpeg"
-import aws from "../../public/courses_image/aws.jpeg"
-import ccsp from "../../public/courses_image/ccsp.jpeg"
-import devopsautomation from "../../public/courses_image/devops&automation.jpeg"
-import cicd from "../../public/courses_image/cicd.jpeg"
-import cloudmigrationmanagement from "../../public/courses_image/cloudmigrationmanagement.jpeg"
-import cloudsecurit from "../../public/courses_image/cloudsecurit.png"
-import datascienceprojects from "../../public/courses_image/datascienceprojects.jpeg"
-import tensorflow from "../../public/courses_image/tensorflow.png";
-import ethicalhacking from "../../public/courses_image/ethicalhacking.jpeg";
-import hranalytics from "../../public/courses_image/hranalytics.jpeg";
-import hrtraininig from "../../public/courses_image/hrtraininig.jpeg"
-import hybridmulti from "../../public/courses_image/hybridmulti.jpeg";
-import iac from "../../public/courses_image/iac.png";
-import java from "../../public/courses_image/JAVA.png";
-import mern from "../../public/courses_image/mern.jpeg";
-import mining from "../../public/courses_image/mining.jpeg";
-import ml from "../../public/courses_image/ML.jpeg";
-import networksecurity from "../../public/courses_image/networksecurity.jpeg";
-import nlp from "../../public/courses_image/nlp.jpeg";
-import python from "../../public/courses_image/python.jpg";
-import reactnext from "../../public/courses_image/reactnext.jpeg";
-import saps4hana from "../../public/courses_image/saps4hana.png";
-import talentacquisition from "../../public/courses_image/talentacquisition.jpeg";
-import sapfullstack from "../../public/courses_image/sapfullstack.png"
-import kubernatesdocker from "../../public/courses_image/kubernatesdocker.jpeg"
-import cyberfunda from "../../public/courses_image/cyberfunda.jpeg"
-
-const CourseCategories = () => {
-  const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('technical');
-  const [selectedSection, setSelectedSection] = useState('trendingcourse');
-  const [selectedCourse, setSelectedCourse] = useState(null);
 
   const managementCourses = [
     {
@@ -86,26 +47,12 @@ const CourseCategories = () => {
     }
   ];
 
-  const sections = [
-    { id: 'trendingcourse', label: 'Trending Courses' },
-    { id: 'datascience', label: 'Data Science' },
-    { id: 'softwaredevelopment', label: 'Software Development' },
-    { id: 'cloudcomputing', label: 'Cloud Computing' },
-    { id: 'clouddevops', label: 'Cloud DevOps & Automation' },
-    { id: 'cybersecurity', label: 'Cyber Security' },
-
-
-    { id: 'sap', label: 'SAP' },
-    { id: 'hr', label: 'HR' },
-
-  ];
-
   const allCourses = [
     {
       id: 1,
       title: 'Generative AI & Machine Learning',
       instructor: 'Dr. Sarah Chen',
-      image: genai,
+      image: aiImage,
       duration: '12 weeks',
       students: '2,847',
       rating: 4.9,
@@ -132,7 +79,7 @@ const CourseCategories = () => {
       id: 1,
       title: 'Java Full Stack Development',
       instructor: 'Anjali Mehta',
-      image: java,
+      image: aiImage,
       duration: '18 weeks',
       students: '7,430',
       rating: 4.7,
@@ -156,7 +103,7 @@ const CourseCategories = () => {
       id: 2,
       title: 'Python Full Stack Development',
       instructor: 'Mark Rodriguez',
-      image: python,
+      image: pythonImage,
       duration: '16 weeks',
       students: '5,234',
       rating: 4.8,
@@ -180,7 +127,7 @@ const CourseCategories = () => {
       id: 3,
       title: 'MERN Stack Web Development',
       instructor: 'Rahul Kapoor',
-      image: mern,
+      image: aiImage,
       duration: '14 weeks',
       students: '6,100',
       rating: 4.6,
@@ -205,7 +152,7 @@ const CourseCategories = () => {
       id: 3,
       title: 'React.js & Next.js Mastery',
       instructor: 'Emily Johnson',
-      image: reactnext,
+      image: reactImage,
       duration: '10 weeks',
       students: '3,921',
       rating: 4.9,
@@ -229,7 +176,7 @@ const CourseCategories = () => {
       id: 4,
       title: 'AWS & Cloud Fundamentals',
       instructor: 'James Lee',
-      image: aws,
+      image: aiImage,
       duration: '8 weeks',
       students: '1,820',
       rating: 4.7,
@@ -248,12 +195,32 @@ const CourseCategories = () => {
         'Hands-on Project'
       ]
     },
-  
+    {
+      id: 5,
+      title: 'Interior Design Basics',
+      instructor: 'Clara Miles',
+      image: pythonImage,
+      duration: '6 weeks',
+      students: '980',
+      rating: 4.6,
+      price: '$199',
+      level: 'Beginner',
+      category: 'fashion&interior',
+      description: 'Foundational course in interior planning, colors, and furnishings',
+      syllabus: [
+        'Color Theory & Psychology',
+        'Furniture Selection & Layout',
+        'Lighting Techniques',
+        'Textiles & Accessories',
+        'Room-by-Room Planning',
+        'Practical Design Project'
+      ]
+    },
     {
       id: 601,
       title: 'HR Generalist Training Program',
       instructor: 'Sonal Kapoor',
-      image: hrtraininig,
+      image: "",
       duration: '8 weeks',
       students: '2,350',
       rating: 4.6,
@@ -275,7 +242,7 @@ const CourseCategories = () => {
       id: 602,
       title: 'Talent Acquisition & Recruitment',
       instructor: 'Rohit Sharma',
-      image: talentacquisition,
+      image: "",
       duration: '6 weeks',
       students: '1,800',
       rating: 4.5,
@@ -297,7 +264,7 @@ const CourseCategories = () => {
       id: 603,
       title: 'HR Analytics & Reporting',
       instructor: 'Meera Nair',
-      image: hranalytics,
+      image: "",
       duration: '5 weeks',
       students: '1,320',
       rating: 4.7,
@@ -315,12 +282,32 @@ const CourseCategories = () => {
         'Project: HR Analytics Dashboard'
       ]
     },
-   
+    {
+      id: 8,
+      title: 'Spoken English Mastery',
+      instructor: 'Alex Thompson',
+      image: pythonImage,
+      duration: '4 weeks',
+      students: '3,650',
+      rating: 4.6,
+      price: '$149',
+      level: 'Beginner',
+      category: 'language',
+      description: 'Improve fluency and confidence in English communication',
+      syllabus: [
+        'Grammar & Vocabulary',
+        'Pronunciation Practice',
+        'Speaking Fluency Drills',
+        'Listening Comprehension',
+        'Public Speaking Practice',
+        'Mock Interviews'
+      ]
+    },
     {
       id: 11,
       title: 'Cloud Security Professional (CCSP)',
       instructor: 'Sarah Jenkins',
-      image: ccsp,
+      image: reactImage,
       duration: '6 weeks',
       students: '750',
       rating: 4.8,
@@ -341,7 +328,7 @@ const CourseCategories = () => {
       id: 12,
       title: 'Hybrid Cloud & Multi-cloud Strategies',
       instructor: 'David Kim',
-      image: hybridmulti,
+      image: aiImage,
       duration: '7 weeks',
       students: '620',
       rating: 4.7,
@@ -363,7 +350,7 @@ const CourseCategories = () => {
       id: 13,
       title: 'Cloud DevOps and Automation',
       instructor: 'Maria Sanchez',
-      image: devopsautomation,
+      image: pythonImage,
       duration: '10 weeks',
       students: '1,500',
       rating: 4.9,
@@ -386,7 +373,7 @@ const CourseCategories = () => {
       id: 14,
       title: 'CI/CD Pipeline Development',
       instructor: 'Robert Green',
-      image: cicd,
+      image: reactImage,
       duration: '6 weeks',
       students: '980',
       rating: 4.7,
@@ -407,7 +394,7 @@ const CourseCategories = () => {
       id: 15,
       title: 'Infrastructure as Code with Terraform',
       instructor: 'Elena Petrova',
-      image: iac,
+      image: aiImage,
       duration: '5 weeks',
       students: '800',
       rating: 4.8,
@@ -428,7 +415,7 @@ const CourseCategories = () => {
       id: 16,
       title: 'Kubernetes & Docker Fundamentals',
       instructor: 'Chris Evans',
-      image: kubernatesdocker,
+      image: pythonImage,
       duration: '7 weeks',
       students: '1,200',
       rating: 4.9,
@@ -450,7 +437,7 @@ const CourseCategories = () => {
       id: 17,
       title: 'Cloud Migration and Management',
       instructor: 'Sophia Miller',
-      image: cloudmigrationmanagement,
+      image: reactImage,
       duration: '8 weeks',
       students: '700',
       rating: 4.6,
@@ -472,7 +459,7 @@ const CourseCategories = () => {
       id: 18,
       title: 'AWS Certified Solutions Architect - Associate',
       instructor: 'John Doe',
-      image: aws,
+      image: aiImage,
       duration: '10 weeks',
       students: '3000',
       rating: 4.9,
@@ -533,7 +520,7 @@ const CourseCategories = () => {
       id: 21,
       title: 'Certified Cloud Security Professional (CCSP)',
       instructor: 'Emily Davis',
-      image: ccsp, // Using an existing image, replace with specific if available
+      image: aiImage, // Using an existing image, replace with specific if available
       duration: '9 weeks',
       students: '1500',
       rating: 4.9,
@@ -554,7 +541,7 @@ const CourseCategories = () => {
       id: 301,
       title: 'Cyber Security Fundamentals',
       instructor: 'Alice Thompson',
-      image: cyberfunda, // Replace with actual import or image path
+      image: "", // Replace with actual import or image path
       duration: '10 weeks',
       students: '3,210',
       rating: 4.7,
@@ -578,7 +565,7 @@ const CourseCategories = () => {
       id: 302,
       title: 'Network Security & Firewalls',
       instructor: 'David Nguyen',
-      image: networksecurity,
+      image: "",
       duration: '8 weeks',
       students: '2,876',
       rating: 4.6,
@@ -602,7 +589,7 @@ const CourseCategories = () => {
       id: 303,
       title: 'Ethical Hacking & Penetration Testing',
       instructor: 'Sophia Lee',
-      image: ethicalhacking,
+      image: "",
       duration: '12 weeks',
       students: '4,502',
       rating: 4.8,
@@ -626,7 +613,7 @@ const CourseCategories = () => {
       id: 304,
       title: 'Cloud Security & Compliance',
       instructor: 'Rahul Mehta',
-      image: cloudsecurit,
+      image: "",
       duration: '9 weeks',
       students: '2,045',
       rating: 4.5,
@@ -650,7 +637,7 @@ const CourseCategories = () => {
       id: 401,
       title: 'Machine Learning Mastery',
       instructor: 'Dr. Ananya Sharma',
-      image: ml,
+      image: "",
       duration: '10 weeks',
       students: '6,120',
       rating: 4.8,
@@ -673,7 +660,7 @@ const CourseCategories = () => {
       id: 402,
       title: 'Deep Learning with TensorFlow',
       instructor: 'Kevin Patel',
-      image: tensorflow,
+      image: "",
       duration: '12 weeks',
       students: '4,789',
       rating: 4.7,
@@ -696,7 +683,7 @@ const CourseCategories = () => {
       id: 403,
       title: 'Natural Language Processing (NLP)',
       instructor: 'Aisha Khan',
-      image: nlp,
+      image: "",
       duration: '9 weeks',
       students: '3,142',
       rating: 4.6,
@@ -719,7 +706,7 @@ const CourseCategories = () => {
       id: 404,
       title: 'Data Mining & Pattern Discovery',
       instructor: 'Suresh Iyer',
-      image: mining,
+      image: "",
       duration: '8 weeks',
       students: '2,678',
       rating: 4.5,
@@ -742,7 +729,7 @@ const CourseCategories = () => {
       id: 405,
       title: 'End-to-End Data Science Projects',
       instructor: 'Emily Zhang',
-      image: datascienceprojects,
+      image: "",
       duration: '10 weeks',
       students: '3,765',
       rating: 4.7,
@@ -766,7 +753,7 @@ const CourseCategories = () => {
       id: 501,
       title: 'Full Stack SAP Developer',
       instructor: 'Amit Sinha',
-      image: sapfullstack,
+      image: "",
       duration: '14 weeks',
       students: '2,984',
       rating: 4.7,
@@ -789,7 +776,7 @@ const CourseCategories = () => {
       id: 502,
       title: 'SAP FICO - Financial Accounting & Controlling',
       instructor: 'Priya Menon',
-      image: sapfico,
+      image: "",
       duration: '10 weeks',
       students: '3,742',
       rating: 4.6,
@@ -812,7 +799,7 @@ const CourseCategories = () => {
       id: 503,
       title: 'SAP S/4HANA – Enterprise Management',
       instructor: 'Nikhil Arora',
-      image: saps4hana,
+      image: "",
       duration: '12 weeks',
       students: '2,615',
       rating: 4.8,
@@ -835,196 +822,3 @@ const CourseCategories = () => {
 
 
   ];
-
-  const certificationCourses = allCourses.filter(course => course.category === 'certificationprep');
-
-  const filteredCourses =
-    selectedSection === 'trendingcourse'
-      ? allCourses.slice(0, 3)
-      : selectedSection === 'certificationprep'
-        ? certificationCourses
-        : allCourses.filter((course) => course.category === selectedSection);
-
-  const displayedCourses =
-    activeTab === 'technical' ? filteredCourses : managementCourses;
-
-  return (
-    <section className="py-20 bg-[#0f172a] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Course <span className="gradient-text">Categories</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose your learning path and excel in your chosen field
-          </p>
-        </div>
-
-        <div className="flex justify-center mb-12">
-          <div className="glass-card p-2 rounded-2xl">
-            <div className="flex space-x-2">
-              {['technical', 'management'].map((key) => (
-                <Button
-                  key={key}
-                  variant={activeTab === key ? 'gradient' : 'ghost'}
-                  size="lg"
-                  onClick={() => setActiveTab(key)}
-                  className="px-8 py-3 rounded-xl font-semibold transition-all duration-300 capitalize"
-                >
-                  {key}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {activeTab === 'technical' && (
-          <div className="flex justify-center flex-wrap gap-4 mb-12">
-            {sections.map((section) => (
-              <Button
-                key={section.id}
-                variant={selectedSection === section.id ? 'default' : 'outline'}
-                onClick={() => setSelectedSection(section.id)}
-                className={`capitalize ${selectedSection === section.id ? 'border border-primary bg-primary/90 text-white' : ''}`}
-              >
-                {section.label}
-              </Button>
-            ))}
-          </div>
-        )}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedCourses.map((course, index) => (
-            <div
-              key={course.id}
-              className="group glass-card rounded-2xl overflow-hidden hover:scale-105 transition-all duration-500 glow-effect"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute top-4 left-4">
-                  <Badge className="bg-primary/90 text-primary-foreground">
-                    {course.level}
-                  </Badge>
-                </div>
-                <div className="absolute top-4 right-4">
-                  <Badge variant="secondary" className="bg-background/90">
-                    {course.price}
-                  </Badge>
-                </div>
-              </div>
-
-              <div className="p-6 space-y-4">
-                <div className="space-y-2">
-                  <h4 className="text-xl font-bold group-hover:text-primary transition-colors">
-                    {course.title}
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {course.description}
-                  </p>
-                  <p className="text-sm text-primary font-medium">
-                    by {course.instructor}
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between text-sm text-muted-foreground">
-                  <div className="flex items-center space-x-1">
-                    <Clock className="h-4 w-4" />
-                    <span>{course.duration}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Users className="h-4 w-4" />
-                    <span>{course.students}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Star className="h-4 w-4 text-yellow-500" />
-                    <span>{course.rating}</span>
-                  </div>
-                </div>
-
-                <Button
-                  variant="gradient"
-                  className="w-full group/btn"
-                  onClick={() => setSelectedCourse(course)}
-                >
-                  View Course
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-20 text-center space-y-4">
-          <button
-            className="px-8 py-3 bg-blue-400 hover:bg-blue-500 rounded-xl font-semibold transition-all duration-300"
-            onClick={() => navigate('/courses')}
-          >
-            View All Courses
-          </button>
-          <button
-            className="px-8 py-3 bg-green-400 hover:bg-green-500 rounded-xl font-semibold transition-all duration-300 ml-4"
-            onClick={() => {
-              setActiveTab('technical'); // Ensure technical tab is active
-              setSelectedSection('certificationprep');
-            }}
-          >
-            Certification Prep
-          </button>
-        </div>
-      </div>
-
-      {selectedCourse && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center">
-          <div className="bg-[#1e293b] text-white p-6 rounded-2xl max-w-xl w-full shadow-xl relative">
-            <button
-              className="absolute top-4 right-4 text-muted-foreground hover:text-primary text-xl"
-              onClick={() => setSelectedCourse(null)}
-            >
-              ✕
-            </button>
-
-            <img
-              src={selectedCourse.image}
-              alt={selectedCourse.title}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
-
-            <h2 className="text-2xl font-bold mb-2">{selectedCourse.title}</h2>
-            <p className="text-sm text-muted-foreground mb-2">
-              <strong>Instructor:</strong> {selectedCourse.instructor}
-            </p>
-            <p className="text-muted-foreground mb-4">{selectedCourse.description}</p>
-
-            {selectedCourse?.syllabus && (
-              <div className="mb-4">
-                <h4 className="text-lg font-semibold mb-2">Syllabus</h4>
-                <ul className="text-sm max-h-48 overflow-y-auto space-y-1 list-disc list-inside pr-2">
-                  {selectedCourse.syllabus.map((item, idx) => (
-                    <li key={idx} className="text-muted-foreground">{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div className="flex justify-between items-center text-sm text-muted-foreground mb-2">
-              <span><Clock className="inline-block h-4 w-4 mr-1" />{selectedCourse.duration}</span>
-              <span><Users className="inline-block h-4 w-4 mr-1" />{selectedCourse.students}</span>
-              <span><Star className="inline-block h-4 w-4 text-yellow-500 mr-1" />{selectedCourse.rating}</span>
-            </div>
-
-            <div className="flex justify-between items-center">
-              <Badge>{selectedCourse.level}</Badge>
-              <Badge variant="secondary">{selectedCourse.price}</Badge>
-            </div>
-          </div>
-        </div>
-      )}
-    </section>
-  );
-};
-
-export default CourseCategories;

@@ -44,11 +44,11 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 py-6">
             <div className="text-center">
-              <div className="text-3xl font-bold gradient-text">50K+</div>
+              <div className="text-3xl font-bold gradient-text">10K+</div>
               <div className="text-sm text-muted-foreground">Students</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold gradient-text">200+</div>
+              <div className="text-3xl font-bold gradient-text">20+</div>
               <div className="text-sm text-muted-foreground">Courses</div>
             </div>
             <div className="text-center">
